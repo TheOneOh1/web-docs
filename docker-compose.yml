@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  # Development environment with live reload
+  docs-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/docs
+    ports:
+      - "8000:8000"
+    command: mkdocs serve -a 0.0.0.0:8000
+    environment:
+      - WATCHDOG_TIMEOUT=30
+
+  # Production environment serving static files
+  # docs-prod:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "80:80"
+  #   restart: unless-stopped 

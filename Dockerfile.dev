@@ -1,0 +1,10 @@
+FROM python:3.11-slim
+
+WORKDIR /docs
+
+# Copy requirements first to leverage Docker cache
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Don't copy source files - they will be mounted as volume
+CMD ["mkdocs", "serve", "-a", "0.0.0.0:8000"] 
