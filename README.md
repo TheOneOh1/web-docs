@@ -96,18 +96,6 @@ mkdocs build
 - 📝 Table of contents
 - 🔗 Auto-generated navigation
 
-## Contributing
-
-1. Create new content in the appropriate section
-2. Follow the existing structure and formatting
-3. Use front matter for page metadata
-4. Include code examples with syntax highlighting:
-   ````markdown
-   ```python
-   def example():
-       return "Hello, World!"
-   ```
-   ````
 
 ## Docker Deployment
 
